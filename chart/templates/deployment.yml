@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: exphost-configurator
+  labels:
+    app: exphost-configurator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: exphost-configurator
+  template:
+    metadata:
+      labels:
+        app: exphost-configurator
+    spec:
+      serviceAccount: exphost-configurator
+      containers:
+        - name: renderer
+          image: registry.home.exphost.pl/exphost/exphost-configurator:{{ .Chart.AppVersion }}
+          imagePullPolicy: Always

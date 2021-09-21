@@ -1,0 +1,13 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: exphost-configurator
+subjects:
+- kind: ServiceAccount
+  name: exphost-configurator
+  namespace: {{ .Release.Namespace }}
+roleRef:
+  kind: ClusterRole
+  name: exphost-configurator
+  apiGroup: rbac.authorization.k8s.io
