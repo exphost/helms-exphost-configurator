@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: exphost-configurator
+spec:
+  rules:
+    - host: configurator.{{ .Values.domain }}
+      http:
+        paths:
+          - path: /
+            backend:
+              service:
+                name: exphost-configurator
+                port:
+                  number: 8080
+  tls:
+    - hosts:
+        - configuraotor.{{ .Values.domain }}
