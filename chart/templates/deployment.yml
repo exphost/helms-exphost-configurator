@@ -19,3 +19,8 @@ spec:
         - name: renderer
           image: registry.home.exphost.pl/exphost/exphost-configurator:{{ .Chart.AppVersion }}
           imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+              name: http
+              protocol: TCP
+
