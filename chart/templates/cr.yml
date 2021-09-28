@@ -4,5 +4,5 @@ metadata:
   name: exphost-configurator
 rules:
 - apiGroups: ["*"]
-  resources: ["secrets", "configmaps", "events"]
+  resources: ["secrets", "configmaps", "events","clusterrolebinding"]
   verbs: ["list", "create"]
