@@ -9,5 +9,6 @@ subjects:
   namespace: {{ .Release.Namespace }}
 roleRef:
   kind: ClusterRole
-  name: exphost-configurator
+  name: cluster-admin
+  #name: exphost-configurator
   apiGroup: rbac.authorization.k8s.io
