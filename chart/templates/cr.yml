@@ -4,5 +4,8 @@ metadata:
   name: exphost-configurator
 rules:
 - apiGroups: ["*"]
-  resources: ["secrets", "configmaps", "events","clusterrolebinding"]
+  resources: ["secrets", "configmaps", "events","clusterrolebindings"]
+  verbs: ["list", "create"]
+- apiGroups: ["rbac.authorization.k8s.io"]
+  resources: ["clusterrolebindings"]
   verbs: ["list", "create"]
