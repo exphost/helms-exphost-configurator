@@ -5,8 +5,9 @@ metadata:
 spec:
   ports:
     - name: http
-      port: 30070
+      nodePort: 30070
+      port: 8080
       targetPort: http
-      type: NodePort
+  type: NodePort
   selector:
     app: exphost-configurator
