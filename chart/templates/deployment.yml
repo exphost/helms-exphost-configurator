@@ -17,7 +17,7 @@ spec:
       serviceAccount: exphost-configurator
       containers:
         - name: renderer
-          image: registry.gitlab.exphost.pl/exphost/exphost-configurator:{{ .Chart.AppVersion }}
+          image: registry.gitlab.exphost.pl/exphost/exphost-configurator:{{ .Values.image.tag | default .Chart.AppVersion }}
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
