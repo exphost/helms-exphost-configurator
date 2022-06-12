@@ -1,10 +1,12 @@
 ---
 include:
   - https://gitlab.exphost.pl/exphost/exphost-helms/-/raw/master/common/gitlab-ci.yml
-#stages:
-#  - upload
+stages:
+  - upload
 #  - deploy
 
+upload:
+  extends: .upload
 #nodes:
 #  stage: deploy
 #  image: alpine
